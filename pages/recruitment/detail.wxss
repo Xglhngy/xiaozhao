@@ -1,0 +1,262 @@
+/* .header{
+  width:100%;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.header image{
+  width:30rpx;
+  height: 30rpx;
+} */
+@import "../../wxParse/wxParse.wxss";
+page{
+  width: 100%;
+  height: 100%;
+}
+/* 招聘信息 */
+.detail{
+  width: 90%;
+  margin-left:5%;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+  padding-left:3%;
+  padding-right:3%;
+  box-shadow: 10rpx 10rpx 10rpx #f0f0f0;
+}
+.top{
+  width:96%;
+  height:100rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+.top .zw{
+  width: 500rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: left;
+  font-size: 40rpx;
+  color:#333;
+  overflow: hidden
+}
+.top .rq{
+  width: 150rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color:#999;
+  overflow: hidden
+
+}
+.xz{
+  width: 94%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: rgb(255, 174, 0);
+  text-align: left;
+  font-size: 34rpx;
+}
+.xq{
+  width: 94%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content:left;
+  flex-direction: row;
+  align-items: center;
+}
+.txt{
+  font-size: 28rpx;
+  color:#999;
+  margin-right:50rpx;
+}
+.pic{
+  width:40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.dz{
+  width: 94%;
+  height: 100rpx;
+  overflow: hidden;
+  display: flex;
+  justify-content:left;
+  flex-direction: row;
+  align-items: center;
+}
+.dz view{
+  width: 88%;
+  overflow: hidden;
+  font-size: 30rpx;
+  color:#999;
+}
+.address{
+  color:#666;
+  font-size: 30rpx;
+}
+.information{
+  width: 90%;
+  margin-left:5%;
+  box-sizing: border-box;
+  margin-top: 5%;
+}
+/* 公司信息 */
+.title{
+  width:100%;
+  height:70rpx;
+  line-height: 70rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: left;
+  color:#333;
+}
+.name{
+  width:100%;
+  height:60rpx;
+  color:#333;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-align: left;
+}
+.gsbq{
+  width: 100%;
+  color:#999;
+  line-height: 50rpx;
+  text-align: left;
+  font-size: 30rpx;
+  text-indent:2em;
+}
+
+.decrotion,.zz{
+  height:60rpx;
+  color:#999;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-align: left;
+}
+/* 富文本样式 */
+.zwms{
+  width: 90%;
+  margin-left: 5%;
+  margin-top:5%;
+  padding-bottom:180rpx;
+}
+.zwms .title{
+  font-size: 40rpx;
+  color:#333;
+  height:80rpx;
+  line-height: 80rpx;
+}
+.zwms view{
+  color:#999;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+.foot{
+  width: 100%;
+  height: 120rpx;
+  background: white;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  border-top:1px solid #e0e0e0;
+  display: flex;
+  justify-content:space-around;
+  flex-direction: row;
+  align-items: center;
+}
+.shares,.apply{
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  color:white;
+  font-size: 30rpx;
+  border-radius: 14rpx;
+}
+.shares{
+  width: 160rpx;
+  color: rgb(255, 174, 0);
+  box-sizing: border-box;
+  border: 2rpx solid #FFAE27;
+}
+.apply{
+  width: 400rpx;
+  background: rgb(255, 174, 0);
+}
+/* 分享页面 */
+.bounced,.showbtn{
+  position: fixed;
+  width: 100%;
+  top:0;
+  bottom:0;
+  background: rgba(0,0,0,0.6);
+}
+.smbox{
+  width: 600rpx;
+  height: 870rpx;
+  margin-top:40rpx;
+  margin-left:75rpx;
+}
+.showbtn{
+  padding-top: 50rpx;
+}
+.save{
+  width:250rpx;
+  height:60rpx;
+  margin-left: 250rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: white;
+  border-radius: 20rpx;
+  font-size: 34rpx;
+  color: #666;
+}
+.altitle{
+  font-size: 35rpx;
+  margin-bottom: 50rpx;
+  color:white;
+}
+.altimg{
+  width: 600rpx;
+  height: 750rpx;
+}
+.btn{
+  width:500rpx;
+  height: 200rpx;
+  margin-top: 40rpx;
+  margin-left:125rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.shareQQ,.sharewx,.sharepyq{
+  width:100rpx;
+  height: 100rpx; 
+  position: relative;
+}
+.btn button{
+  width:100rpx;
+  height: 100rpx; 
+  border:0.1px solid #80D640;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 100;
+  border-radius: 50%;
+  background-color:rgba(255,255,255,0.01);
+}
+.sharewx image{
+  width:100rpx;
+  height: 100rpx; 
+  position: absolute;
+  top:0;
+  left:0;
+}
+.sharepyq image{
+  width:145rpx;
+  height: 145rpx; 
+  position: absolute;
+  top:-20rpx;
+  left:-24rpx;
+}

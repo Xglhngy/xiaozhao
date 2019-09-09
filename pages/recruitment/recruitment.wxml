@@ -1,0 +1,15 @@
+<view class="wrapper">
+  <block wx:for="{{list}}" wx:for-index="index" wx:key="index">
+      <view class="listdata" bindtap="gotableinfo" data-index="{{index}}">
+        <view class="zw">{{item.name}}</view>
+        <view class="js">
+          <view class="dz">
+            <text class="address">{{item.address}}</text>
+            <text class="education">/{{item.education}}</text>
+            <text class="number">/{{item.number}}</text>
+          </view>
+          <view class="date">{{item.createTime}}</view>       
+        </view>
+      </view>
+  </block>
+</view>

@@ -1,0 +1,57 @@
+
+<view class="header">
+    <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true' indicator-dots="rgba(255,255,245,.4)" indicator-active-color="white">
+      <block wx:for="{{bnrUrl}}" wx:for-index="index" wx:key="index">
+        <swiper-item>
+          <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+</view>
+<view class='introduce'>
+  <view class="title">公司介绍</view>
+  <view class="text">
+  周六福珠宝股份有限公司专业从事钻石镶嵌等珠宝首饰的设计、生产、经营业务、 以“缔造价值，传承真爱”作为企业使命，心怀“让每一个拥有周六福珠宝的人倍感幸福，备受尊崇”的企业发展愿景。
+  </view>
+  <view class="text">
+  品牌诞生以来，周六福珠宝开始在中国大陆进行“周六福”品牌珠宝首饰的运营，在深圳成立第一家周六福珠宝专营店。
+  </view>
+  <view class="text">
+    截止2018年底，周六福全国品牌门店达到2790家，销售网点遍及全国各地。“周六福”珠宝在全国为求职者提供了包括设计、生产、物流、销售、后勤保障等职能部门工作岗位多达200多个，实现就业人数总数量达万余人。
+  </view>
+  <view class="text last">
+    周六福珠宝拥有自主独立的产品研发队伍，及规模庞大钻石镶嵌加工厂，更以“镶嵌专家”闻名于业界。秉承”精简才能体现出艺术灵魂”的产品宗旨和“每一件产品都是精品”的品质理念，周六福珠宝注重产品的精雕细琢、工序的一丝不苟，致力于让每一件产品都散发出艺术品的独特魅力，让每一位拥有周六福珠宝的顾客也能同时感受到这份魅力所在。
+  </view>
+</view>
+<view class="mp">
+  <video src="{{src}}" controls title="周六福时尚2018峰会" width="600rpx"></video>
+</view>
+<view class="footer">
+  <view class="share" bindtap="alerter">分享</view>
+</view>
+<view hidden="{{hidden}}" class="bounced" bindtap="hide">
+    
+    <view class="smbox">
+      <view class="altitle">分享周六福至：</view>
+      <image src='{{alet}}' class="altimg"></image>
+    </view>
+    <view class="btn">
+      <view class="sharewx">
+        <button open-type="share"></button>
+        <image src='{{wx}}'></image>
+      </view>
+      <view class="sharepyq">
+        <button bindtap="friend"></button>
+        <image src='{{friend}}'></image>
+      </view>
+    </view>
+</view>
+<view hidden="{{show}}" class="showbtn" bindtap="showmod">
+  <painter customStyle='margin-left:40rpx' palette="{{template}}" bind:imgOK="onImgOK" bind:imgErr="onImgErr"/>
+  <button style='position:relative;margin-top:50rpx' bind:tap='saveImage' class="save">保存</button>
+</view>
+
+
+
+
+ 

@@ -1,0 +1,8 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="taskdetail">
+  <image src="../images/oshw.jpg"></image>
+  <view class="text">
+      <view class="title">{{title}}</view>
+      <template is="wxParse" data="{{wxParseData:listdata.nodes}}" />
+  </view>
+</view>

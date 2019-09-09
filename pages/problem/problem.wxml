@@ -1,0 +1,17 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="message" hidden="{{hidden}}">
+  <block wx:for="{{listdata}}" wx:for-index="index" wx:key="index">
+      <view class="listdata" data-index="{{index}}">
+          <view class="ask">
+            <image class='askimg' src="/pages/images/d.png"></image>
+            <text>问：</text>
+            <template is="wxParse" class="askdata" data="{{wxParseData:item.ask}}"/> 
+          </view>
+          <view class="answer">
+            <image class="answerimg" src="/pages/images/w.png"></image>
+            <text>答：</text>
+            <template class="answerdata" is="wxParse" data="{{wxParseData:item.answer}}"/>
+          </view>
+      </view>
+  </block>
+</view>

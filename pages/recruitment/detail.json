@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "职位详情",  
+  "usingComponents": {
+    "painter": "/components/painter/painter"
+  }
+  
+}

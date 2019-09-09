@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/about/about",
+    "pages/recruitment/recruitment",
+    "pages/problem/problem",    
+    "pages/process/process",
+    "pages/task/task",
+    "pages/task/validation",
+    "pages/task/taskdetail",
+    "pages/recruitment/detail",
+    "pages/recruitment/present"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "周六福招聘",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于我们",
+        "iconPath": "pages/images/about.png",
+        "selectedIconPath": "pages/images/abouty.png"
+      },
+      {
+        "pagePath": "pages/recruitment/recruitment",
+        "text": "招聘岗位",
+        "iconPath": "pages/images/zp.png",
+        "selectedIconPath": "pages/images/zpy.png"
+      },
+      {
+        "pagePath": "pages/problem/problem",
+        "text": "Q&A",
+        "iconPath": "pages/images/wd.png",
+        "selectedIconPath": "pages/images/wdy.png"
+      },
+      {
+        "pagePath": "pages/process/process",
+        "text": "招聘流程",
+        "iconPath": "pages/images/lc.png",
+        "selectedIconPath": "pages/images/lcy.png"
+      },
+      {
+        "pagePath": "pages/task/task",
+        "text": "入职任务",
+        "iconPath": "pages/images/rw.png",
+        "selectedIconPath": "pages/images/rwy.png"
+      }
+      
+    ],
+    "color": "red",
+    "selectedColor": "#18a689",
+    "backgroundColor": "white",
+    "position": "bottom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

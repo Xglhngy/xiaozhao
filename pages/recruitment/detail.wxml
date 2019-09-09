@@ -1,0 +1,62 @@
+<!-- <view class="header">
+  <image src="../images/left.png"></image>
+</view> -->
+
+<!-- 卡片形式的招聘需求 -->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="detail">
+  <view class="top">
+    <view class="zw">{{name}}</view>
+    <view class="rq">{{createTime}}</view>
+  </view>
+  <view class="xz">{{salary}}</view>
+  <view class="xq">
+    <image class="pic" src="../images/people.png"></image>
+    <view class="txt">{{number}}</view>
+    <image  class="pic" src="../images/xl.png"></image>
+    <view class="txt">{{education}}</view>
+    <image class="pic" src="../images/time.png"></image>
+    <view class="txt">{{experience}}</view>
+  </view>
+  <view class="dz">
+    <image class="pic" src="../images/dz.png"></image>
+    <template is="wxParse" data="{{wxParseData:contact.nodes}}" />
+  </view>
+</view>
+<!-- 公司信息 -->
+<view class="information" hidden="{{mohidden}}">
+  <view class="title">公司信息</view>
+  <view class="name">周六福珠宝股份有限公司</view>
+  <view class="gsbq">
+    <template is="wxParse" data="{{wxParseData:company.nodes}}" />
+  </view>
+</view>
+<!-- 职位描述 -->
+<view class="zwms">
+  <view class="title">职位描述</view>
+  <template is="wxParse" data="{{wxParseData:information.nodes}}" />
+</view>
+<view class="foot">
+  <view class="shares" bindtap="alter">分享职位</view>
+  <view class="apply" bindtap="gotableinfo">立即申请</view>
+</view>
+<view hidden="{{hidden}}" class="bounced" bindtap="hide">
+    <view class="smbox">
+      <view class="altitle">分享该职位至：</view>
+      <image src='{{alet}}' class="altimg"></image>
+    </view>
+    <view class="btn">
+      <view class="sharewx">
+        <button open-type="share"></button>
+        <image src='{{wx}}'></image>
+      </view>
+      <view class="sharepyq">
+        <button bindtap="friend"></button>
+        <image src='{{friend}}'></image>
+      </view>
+    </view>
+</view>
+<view hidden="{{show}}" class="showbtn" bindtap="showbtn">
+  <painter customStyle='margin-left:40rpx' palette="{{template}}" bind:imgOK="onImgOK" bind:imgErr="onImgErr"/>
+  <button style='position:relative;margin-top:50rpx' bind:tap='saveImage' class="save">保存</button>
+</view>

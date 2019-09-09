@@ -1,0 +1,14 @@
+/* pages/process/process.wxss */
+page{
+  width: 100%;
+  height:100%;
+}
+.back{
+  width: 100%;
+  height:100%;
+  overflow: hidden;
+}
+.back image{
+  width: 100%;
+  height:100%;
+}

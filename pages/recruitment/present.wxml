@@ -1,0 +1,243 @@
+<view class="wrapper">
+<!-- 个人信息填写 -->
+  <view class="title">
+    <image src="../images/text.png" class='tpic'></image>
+    <text>请填写申请信息(必填)</text>
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+  <!-- 个人姓名 -->
+    <view class="line">
+      <text>姓名</text>
+      <input type="text" placeholder-style='text-align:right;color：#e0e0e0;' placeholder="请输入" name='name'></input>
+    </view>
+    <!-- 个人联系方式 -->
+    <view class="line">
+      <text>联系电话</text>
+      <input type="text" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" name='tel'></input>
+    </view>
+    <!-- 出生日期 -->
+    <view class="line">
+      <text>出生年月</text>
+      <picker mode='date' id="databorn" value="{{dateBirth}}" bindchange="bingDateChange">
+      <view class='date' name="date">
+        <input name="addtime" value="{{dateBirth}}" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请选择" disabled="true"></input>
+      </view>
+      </picker>
+    </view>
+    <!-- 户籍地 -->
+    <view class="line">
+      <text>户籍地</text>
+      <input type="text" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" name='address'></input>
+    </view>
+    <!-- 身高 -->
+    <view class="line">
+      <text>身高(cm)</text>
+      <input type="text" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" name='height'></input>
+    </view>
+    <!-- 体重 -->
+     <view class="line">
+      <text>体重(kg)</text>
+      <input type="text" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" name='weight'></input>
+    </view>
+    <!-- 学历 -->
+    <view class="line">
+      <text>学历</text>
+      <input type="text" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" name='education'></input>
+    </view>
+    <!-- 邮箱 -->
+     <view class="line">
+      <text>个人邮箱</text>
+      <input type="text" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" name='email'></input>
+    </view>
+    <!-- 性别 -->
+    <view class="line email">
+      <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio" >
+              <text> 女 :</text><radio value="1" checked="true"/>
+          </label>
+          <label class="radio" >
+              <text> 男 :</text><radio value="0" checked=""/>
+          </label>
+      </radio-group>
+    </view>
+    <!-- 家庭信息绑定 -->
+    <view class="title">
+      <image src="../images/text.png" class='tpic'></image>
+      <text>请填写家庭信息(必填)</text>
+      <image src="../images/add.png" class='add' bindtap="add" id='familyadd'></image>
+      <image src="../images/reduce.png" class='reduce' bindtap="reduce" id='familyreduce'></image>
+    </view>
+    <!-- 家人姓名 -->
+    <view class="select" hidden="{{familyshow}}" wx:for="{{familySituationDoList}}" wx:for-index="index" wx:key="index">
+      <view class="selectline">
+        <text>姓名</text>
+        <input type="text" data-id="xm{{index}}" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" value="{{item.name}}" bindinput="bindKeyInput"></input>
+      </view>
+      <!-- 关系 -->
+      <view class="selectline">
+        <text>关系</text>
+        <input type="text" data-id="gx{{index}}" bindinput="bindKeyInput" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" value="{{item.relationship}}"></input>
+      </view>
+      <!-- 所在职位 -->
+      <view class="selectline">
+        <text>职位</text>
+        <input type="text"  data-id="zw{{index}}" bindinput="bindKeyInput"  placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入"></input>
+      </view>
+      <!-- 所在工作单位 -->
+      <view class="selectline">
+        <text>工作单位</text>
+        <input type="text" data-id="dw{{index}}" bindinput="bindKeyInput" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" name='unit{{index}}'></input>
+      </view>
+    </view>
+      <!-- 隐藏绑定 -->
+    <view class="zssq" bindtap="hiddenfamily">
+      <image src="{{hiddenfamily}}"></image>
+    </view>
+
+    <!-- 教育信息绑定 -->
+     <view class="title">
+      <image src="../images/text.png" class='tpic'></image>
+      <text>请填写教育经历(必填)</text>
+      <!-- 增加educationadd -->
+      <image src="../images/add.png" class='add' bindtap="add" id='educationadd'></image>
+      <!-- 减少educationreduce -->
+      <image src="../images/reduce.png" class='reduce' bindtap="reduce" id='educationreduce'></image>
+    </view>
+    <!-- 教育 -->
+    <view class="select" hidden="{{educationshow}}" wx:for="{{educationalList}}" wx:for-index="index" wx:key="index">
+    <!-- 教育时间 -->
+      <view class="selectline">
+      <!-- 时间dateeducation -->
+        <text>起始时间</text>
+        <picker mode='date' value="{{item.qs}}" bindchange="bingDateChange1" id="dateeducation{{index}}">
+          <view class='date' name="date">
+            <input name="addtime" value="{{item.qs}}" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请选择" disabled="true"></input>
+          </view>
+        </picker>
+      </view>
+      <view class="selectline">
+      <!-- 时间dateeducation -->
+        <text>截止时间</text>
+        <picker mode='date' value="{{item.jz}}" bindchange="bingDateChangelast1" id="datelast{{index}}">
+          <view class='date' name="date">
+            <input name="addtime" value="{{item.jz}}" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请选择" disabled="true"></input>
+          </view>
+        </picker>
+      </view>
+      <view class="selectline">
+      <!-- 专业professional -->
+        <text>专业</text>
+        <input type="text"  data-id="zy{{index}}" bindinput="bindKeyInput" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" name='professional{{index}}'></input>
+      </view>
+      <view class="selectline">
+        <text>学历</text>
+        <!-- 学历formal -->
+        <input type="text"  data-id="xl{{index}}" bindinput="bindKeyInput" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" name='formal{{index}}'></input>
+      </view>
+    </view>
+    <!-- 隐藏绑定 -->
+    <view class="zssq" bindtap="hiddeneducation">
+      <image src="{{hiddeneducation}}"></image>
+    </view>
+
+    <!-- 实习经历绑定 -->
+     <view class="title">
+      <image src="../images/text.png" class='tpic'></image>
+      <text>请填写实习经历(选填)</text>
+      <!-- 增加实习internshipadd减少实习internshipreduce -->
+      <image src="../images/add.png" class='add' bindtap="add" id='internshipadd'></image>
+      <image src="../images/reduce.png" class='reduce' bindtap="reduce" id='internshipreduce'></image>
+    </view>
+    <!-- 实习经历 -->
+    <view class="select"  hidden="{{sxshow}}" wx:for="{{internshipList}}" wx:for-index="index" wx:key="index">
+    <!-- 实习时间 -->
+      <view class="selectline">
+      <!-- 时间dateinternship -->
+        <text>开始时间</text>
+        <picker mode='date' value="{{item.qs}}" bindchange="bingDateChange2" id="dateinternship{{index}}">
+          <view class='date' name="date">
+            <input name="addtime" value="{{item.qs}}" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请选择" disabled="true"></input>
+          </view>
+        </picker>
+      </view>
+      <view class="selectline">
+      <!-- 时间dateinternship -->
+        <text>结束时间</text>
+        <picker mode='date' value="{{item.jz}}" bindchange="bingDateChangelast2" id="dateinternship{{index}}">
+          <view class='date' name="date">
+            <input name="addtime" value="{{item.jz}}" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请选择" disabled="true"></input>
+          </view>
+        </picker>
+      </view>
+      <view class="selectline">
+      <!-- 实习单位unit -->
+        <text>实习单位</text>
+        <input type="text"  data-id="sx{{index}}" bindinput="bindKeyInput" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" name='unit{{index}}'></input>
+      </view>
+      <!-- 工作内容content -->
+      <view class="selectline">
+        <text>实习内容</text>
+        <input type="text"  data-id="ct{{index}}" bindinput="bindKeyInput"  placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" name='content{{index}}'></input>
+      </view>
+    </view>
+    <!-- 隐藏绑定 -->
+    <view class="zssq" bindtap="hiddensx">
+      <image src="{{hiddensx}}"></image>
+    </view>
+    
+    <!-- 获得证书绑定 -->
+    <view class="title">
+      <image src="../images/text.png" class='tpic'></image>
+      <text>填写获得的证书/荣誉</text>
+      <!-- 增加honoradd -->
+      <image src="../images/add.png" class='add' bindtap="add" id='honoradd'></image>
+      <!-- 减少honorreduce -->
+      <image src="../images/reduce.png" class='reduce' bindtap="reduce" id='honorreduce'></image>
+    </view>
+    <!-- 证书 -->
+    <view class="select" hidden="{{zsshow}}" wx:for="{{certificateDoList}}" wx:for-index="index" wx:key="index">
+    <!-- 时间 -->
+      <view class="selectline">
+        <text>时间</text>
+        <!-- 颁发时间datehonor -->
+        <picker mode='date' value="{{item.time}}" bindchange="bingDateChange3" id="datehonor{{index}}">
+          <view class='date' name="date">
+            <input name="addtime" value="{{item.time}}" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请选择" disabled="true"></input>
+          </view>
+        </picker>
+      </view>
+      <view class="selectline">
+        <!-- 证书certificate -->
+        <text>荣誉/证书</text>
+        <input type="text"  data-id="zs{{index}}" bindinput="bindKeyInput" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" name='certificate{{index}}'></input>
+      </view>
+      <!-- 颁发hair -->
+      <view class="selectline">
+        <text>颁发单位</text>
+        <input type="text"  data-id="bf{{index}}" bindinput="bindKeyInput" placeholder-style='text-align:right;color：#e0e0e0' placeholder="请输入" name='hair{{index}}'></input>
+      </view>
+    </view>
+     <view class="zssq" bindtap="hiddenzs">
+      <image src="{{hiddenzs}}"></image>
+     </view>
+
+    <!-- 特长爱好 -->
+    <view class="lines">
+      <view>特长/爱好</view>
+      <textarea maxlength='{{maxTextLen}}' name='hobby' auto-height placeholder="请填写您的爱好..." placeholder-style='color：#999'></textarea>
+    </view>
+    <!-- 其他意向岗位 -->
+    <view class="lines">
+      <view>其他意向岗位</view>
+      <textarea maxlength='{{maxTextLen}}' name="otherjobs" auto-height placeholder="请填写您的其他意向岗位..." placeholder-style='color：#999'></textarea>
+    </view>
+    <!-- 其他说明 -->
+    <view class="lines last">
+      <view>其他说明</view>
+      <textarea maxlength='{{maxTextLen}}' name="other" auto-height placeholder="您可以在此补充其他信息（200字以内）......" placeholder-style='color：#999'></textarea>
+    </view>
+   
+    <!-- 提交申请 -->
+    <button class="btn" form-type="submit">提交申请</button>
+  </form>
+</view>

@@ -1,0 +1,11 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="task">
+  <block wx:for="{{list}}" wx:key="index">
+      <view class="listdata" bindtap="todetail"  data-index="{{index}}">
+          <image src="../images/110.jpg" class="img"></image>
+          <view class="{{item.name}}">任务{{index+1}}</view>
+          <image src="../images/suo.png" hidden='{{item.state}}' class="suourl"></image>
+      </view>
+  </block>
+</view>
+<view class="bottom" bindtap="back">返回</view>

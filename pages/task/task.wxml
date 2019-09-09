@@ -1,0 +1,10 @@
+<view class="bck">
+  <image src="../images/login-bg.jpg" class="bkimg"></image>
+  <image src="../images/welcome.png" class="top"></image>
+    <view class="title" hidden="{{show}}">请输入人力资源通知您的验证码进入</view>
+    <view class="ipt"  hidden="{{show}}">
+      <text class="">验证码 ： </text>
+      <input class="yzm"  bindinput="listenerNewLabelInput"></input>
+    </view>
+    <view class="btn" bindtap="comein"  hidden="{{show}}">验证进入</view>  
+</view>
